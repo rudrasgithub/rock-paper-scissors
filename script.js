@@ -121,3 +121,7 @@ crossSymbol.addEventListener('click', () => {
 rulesBtn.addEventListener('click', () => {
   rulesPopup.classList.remove('hidden')
 })
+
+crossSymbol.addEventListener('click', () => {
+  rulesPopup.classList.add('hidden');
+});

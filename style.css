@@ -100,7 +100,13 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+#cross-symbol {
+  z-index: 10;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .cross-symbol {
