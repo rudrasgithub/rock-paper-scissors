@@ -125,3 +125,19 @@ rulesBtn.addEventListener('click', () => {
 crossSymbol.addEventListener('click', () => {
   rulesPopup.classList.add('hidden');
 });
+
+const winCelebration = document.getElementById('win-celebration');
+const playAgainFinal = document.getElementById('play-again-final');
+
+nextBtn.addEventListener('click', () => {
+  resultContainer.classList.add('hidden');
+  winCelebration.classList.remove('hidden');
+});
+
+playAgainFinal.addEventListener('click', () => {
+  winCelebration.classList.add('hidden');
+  gameBoard.classList.remove('hidden');
+  nextBtn.classList.add('hidden');
+  gameLocked = false;
+});
+
