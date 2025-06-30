@@ -86,7 +86,7 @@ body {
 }
 
 #rules-popup {
-  position: absolute;
+  position: fixed;
   top: 260px;
   right: 70px;
   width: 267px;
@@ -98,7 +98,7 @@ body {
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  z-index: 5000;
 }
 
 .hidden {
@@ -362,9 +362,7 @@ body {
   transition: all 2s ease-in-out;
 }
 
-
 #win-celebration {
-  /* background-color: #8CC461; */
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -387,8 +385,18 @@ body {
   margin-bottom: 20px;
 }
 
-.stars {
+.stars-list {
   margin-bottom: 20px;
+}
+
+.stars {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  z-index: 0;
+  opacity: 0.8;
 }
 
 .star {
@@ -428,4 +436,54 @@ body {
   font-weight: 600;
   color: #6B6B6B;
   letter-spacing: 1px;
+}
+
+.fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.fireworks::before,
+.fireworks::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    50vw 10vh #FFD700,
+    20vw 20vh #FF6347,
+    70vw 30vh #00FFFF,
+    30vw 40vh #FF00FF,
+    90vw 25vh #7CFC00,
+    10vw 15vh #FFA500,
+    80vw 35vh #FF69B4,
+    60vw 45vh #1E90FF;
+  animation: explode 2s ease-in-out infinite;
+}
+
+.fireworks::after {
+  animation-delay: 1s;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.2);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
 }
