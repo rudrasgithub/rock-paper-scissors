@@ -12,6 +12,7 @@ const nextBtn = document.getElementById('next-btn');
 const rulesPopup = document.getElementById('rules-popup');
 const crossSymbol = document.getElementById('cross-symbol');
 const rulesBtn = document.getElementById('rules-btn');
+const scoreboard = document.getElementById('scoreboard')
 
 let gameLocked = false;
 
@@ -131,13 +132,15 @@ const playAgainFinal = document.getElementById('play-again-final');
 
 nextBtn.addEventListener('click', () => {
   resultContainer.classList.add('hidden');
+  scoreboard.classList.add('hidden')
   winCelebration.classList.remove('hidden');
+  nextBtn.classList.add('hidden')
 });
 
 playAgainFinal.addEventListener('click', () => {
+  scoreboard.classList.remove('hidden')
   winCelebration.classList.add('hidden');
   gameBoard.classList.remove('hidden');
-  nextBtn.classList.add('hidden');
   gameLocked = false;
 });
 
